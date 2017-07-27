@@ -24,7 +24,7 @@ def frame_stepper(frame, in_first_half, current_frame):
     return frame, in_first_half
 
 
-def get_result(frame, game, current_frame, current_frame_value, result, last, iterator):
+def get_result_for_frame(frame, game, current_frame, current_frame_value, result, last, iterator):
 
     if is_spare(current_frame):
         result += 10 - last
@@ -53,7 +53,7 @@ def score(game):
 
         current_frame, current_frame_value = game[i], get_value(game[i])
 
-        result = get_result(frame, game, current_frame, current_frame_value, result, last, i)
+        result = get_result_for_frame(frame, game, current_frame, current_frame_value, result, last, i)
         last = current_frame_value
 
         frame_change = frame_stepper(frame, in_first_half, current_frame)

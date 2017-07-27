@@ -59,4 +59,4 @@ def get_value(char):
     elif char == '-':
         return 0
     else:
-        raise valueueError()
+        raise ValueError()

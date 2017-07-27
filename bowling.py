@@ -18,7 +18,6 @@ def score(game):
 
         current_frame, current_frame_value = game[i], get_value(game[i])
 
-        # calculating result/score
         if is_spare(current_frame):
             result += 10 - last
         else:
@@ -36,7 +35,6 @@ def score(game):
                     result += next_frame_value_2
         last = current_frame_value
 
-        # frame stepping
         if not in_first_half:
             frame += 1
         if in_first_half is True:
